@@ -1,0 +1,24 @@
+:root {
+    --pic_size: 250px;
+}
+body * {
+    background-color: linen;
+    text-align: center;
+    border: 1px solid darkslategrey;
+    box-sizing: border-box;
+}
+.frame {
+    width: min-content;
+    margin: 50px auto;
+}
+.side-1, .side-2 {
+    width: var(--pic_size);
+    height: var(--pic_size);
+}
+.flip_label {
+    background-color: lightgrey;
+    color: darkslategray;
+    display: inline-block;
+    width: 50%;
+}
+
