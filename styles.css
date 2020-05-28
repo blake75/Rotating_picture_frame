@@ -10,15 +10,37 @@ body * {
 .frame {
     width: min-content;
     margin: 50px auto;
+    perspective: 1000px;
+    position: relative;
 }
 .side-1, .side-2 {
     width: var(--pic_size);
     height: var(--pic_size);
+    transition: 1s linear;
+    backface-visibility: hidden;
+}
+.side-2 {
+    transform: rotateY(-180deg);
+    position: absolute;
+    top: 0;
 }
 .flip_label {
     background-color: lightgrey;
     color: darkslategray;
     display: inline-block;
     width: 50%;
+    transition: 0.1s;
+}
+.flip_label:active {
+    transform: scale(0.95) translate(3px);
+}
+#radio1, #radio2 {
+    display: none;
+}
+#radio2:checked ~ .side-1 {
+    transform: rotateY(180deg);
+}
+#radio2:checked ~ .side-2 {
+    transform: rotateY(0deg);
 }
 
