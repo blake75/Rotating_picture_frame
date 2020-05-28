@@ -11,7 +11,13 @@ body * {
     width: min-content;
     margin: 50px auto;
     perspective: 1000px;
-    position: relative;
+    background-color: black;
+    box-shadow: calc(0.1 * var(--pic_size)) calc(0.1 * var(--pic_size)) 100px rgba(100,100,100,1) inset,
+    calc(-0.1 * var(--pic_size)) calc(-0.1 * var(--pic_size)) 100px rgba(100,100,100,1) inset;
+}
+.side-1 {
+    box-shadow: 0 0 100px rgba(0,0,0,0) inset,
+    0 0 100px rgba(255,255,255,0) inset;
 }
 .side-1, .side-2 {
     width: var(--pic_size);
@@ -21,6 +27,8 @@ body * {
 }
 .side-2 {
     transform: rotateY(-180deg);
+    box-shadow: var(--pic_size) 0 100px rgba(0,0,0,1) inset,
+    calc(var(--pic_size) * -1) 0 100px rgba(255,255,255,1) inset;
     position: absolute;
     top: 0;
 }
@@ -39,8 +47,14 @@ body * {
 }
 #radio2:checked ~ .side-1 {
     transform: rotateY(180deg);
+    box-shadow: calc(var(--pic_size) * -1) 0 100px rgba(0,0,0,1) inset,
+    calc(var(--pic_size)) 0 100px rgba(255,255,255,1) inset;
 }
 #radio2:checked ~ .side-2 {
     transform: rotateY(0deg);
+    box-shadow: 0 0 100px rgba(0,0,0,0) inset,
+    0 0 100px rgba(255,255,255,0) inset;
 }
+
+
 
